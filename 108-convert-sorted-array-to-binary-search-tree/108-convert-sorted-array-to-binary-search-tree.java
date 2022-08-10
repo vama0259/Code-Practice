@@ -23,7 +23,7 @@ class Solution {
             return null;
         }
         
-        int mid = low + (high - low) / 2;
+        int mid = (low+high) / 2;
         
         TreeNode root = new TreeNode(nums[mid]);
         root.left = divide(nums, low, mid - 1);

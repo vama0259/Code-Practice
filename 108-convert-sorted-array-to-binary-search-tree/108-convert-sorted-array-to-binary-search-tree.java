@@ -15,24 +15,20 @@
  */
 class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
-        
-        return findans(nums, 0, nums.length-1);
-        
+        return divide(nums, 0, nums.length - 1);
     }
     
-    private TreeNode findans(int [] nums,int left,int right){
-        if(right < left ) return null; //base case
-  
-        int mid = (left + right) /2;
-        TreeNode root = new TreeNode(nums[mid]); //make a node and call recursion
+    public TreeNode divide(int[] nums, int low, int high) {
+        if (low > high) {
+            return null;
+        }
         
-       
-        TreeNode leftSubtree = findans(nums,left,mid - 1);
+        int mid = low + (high - low) / 2;
         
-        TreeNode rightSubtree = findans(nums,mid + 1,right);
- //after recursion we expect that we have left and right subtree so now join them       
-         root.left = leftSubtree;
-         root.right = rightSubtree;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = divide(nums, low, mid - 1);
+        root.right = divide(nums, mid + 1, high);
+        
         return root;
     }
 }

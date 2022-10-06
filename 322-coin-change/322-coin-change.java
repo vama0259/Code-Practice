@@ -7,11 +7,8 @@ class Solution {
         
         for(int i =1; i <= amount; i++){
             for(int j =0; j < coins.length; j++){
-                if(coins[j] <= i){
-                    int res = dp[i- coins[j]];
-                    if(res != Integer.MAX_VALUE){
+                if(coins[j] <= i && dp[i-coins[j]]!=Integer.MAX_VALUE){
                     dp[i] = Math.min(dp[i], dp[i-coins[j]] +1);
-                    }
                 }
             }
         }

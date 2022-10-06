@@ -19,24 +19,4 @@ class Solution {
             return dp[amount];
         }
     }
-//     public int solve(int[] coins, int n, int dp[]){
-//         if(n==0){
-//             return 0;
-//         }
-//         if(n<0){
-//             return Integer.MAX_VALUE;
-//         }
-//         if(dp[n] !=  Integer.MAX_VALUE){
-//             return dp[n];
-//         }
-//         int min = Integer.MAX_VALUE;
-//         for(int i =0; i < coins.length; i++){
-//             int ans = solve(coins, n-coins[i], dp);
-//             if(ans != Integer.MAX_VALUE){
-//                 min = Math.min(min, ans+1);
-//             }
-//         }
-        
-//         return dp[n] = min;
-//     }
 }
